@@ -1,0 +1,41 @@
+.text-center {
+  text-align: center !important;
+}
+.upper-section {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("https://www.marketing-communicatie-vacatures.nl/uploads/afbeeldingen/vacatures/Bedrijfsprofielen/Social%20Brothers/Social%20Brothers%20banner1.jpg");
+  background-size: cover;
+  height: 337px;
+}
+.headerImg {
+  height: auto;
+  max-width: 100%;
+}
+.logo {
+  width: 22%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 118px;
+  margin-left: 78px;
+}
+.main {
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+ul.mainItem {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  margin-top: 73px;
+  list-style-type: none;
+  width: 10%;
+}
+li.toplistItem {
+  margin: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+}

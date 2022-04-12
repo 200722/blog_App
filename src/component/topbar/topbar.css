@@ -51,7 +51,6 @@
 
 .topImg {
   width: 23%;
-  /* height: 40px; */
   object-fit: cover;
   margin-right: 15px;
   cursor: pointer;

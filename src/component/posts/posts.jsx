@@ -1,12 +1,10 @@
 import "./posts.css";
 import SinglePost from "../singlepost/SinglePost";
 import { useState, useEffect } from "react";
-// import Header from "../../component/header/Header";
-// import { useState, useEffect } from "react";
 import { fetchPosts } from "../../frontend-case-api";
 export default function Posts() {
   const [data, setData] = useState(0);
-  const [page, setPage] = useState(8);
+  const [page, setPage] = useState(4);
 
   useEffect(() => {
     fetchPosts(page, setData);
@@ -31,7 +29,7 @@ export default function Posts() {
           );
         })}
       <button onClick={() => increment()} className="meer-laden">
-        meer laden
+        Meer laden
       </button>
     </div>
   );

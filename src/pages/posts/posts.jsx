@@ -7,10 +7,8 @@ import "./posts.css";
 export default function Home() {
   return (
     <>
-      {/* <TopBar /> */}
       <Header />
       <div className="home">
-        {/* <Sidebar /> */}
         <Posts />
       </div>
     </>

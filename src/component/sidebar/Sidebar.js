@@ -1,5 +1,5 @@
 import "./sidebar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CameraAltIcon from "@mui/icons-material/ThreeDRotation";
 import { useState, useEffect } from "react";
 
 import { createPost, getCategories } from "../../frontend-case-api";
@@ -17,16 +17,13 @@ export default function Sidebar() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("submitted", event.target.files.files[0]);
+    var files = document.getElementById("file").files[0];
+    // console.log(files);
     var formdata = new FormData();
     formdata.append("title", event.target.title.value);
     formdata.append("content", event.target.description.value);
     formdata.append("category_id", event.target.select.value);
-    formdata.append(
-      "image",
-      event.target.file.files[0],
-      event.target.files.files[0].name
-    );
+    formdata.append("image", files, files.name);
     await createPost(formdata);
   };
 
@@ -35,7 +32,12 @@ export default function Sidebar() {
       <div>
         <h1>Plaats een blog bericht</h1>
       </div>
-      <form onSubmit={handleSubmit} className="sidebarTitle">
+
+      <form
+        onSubmit={handleSubmit}
+        className="sidebarTitle"
+        enctype="multipart/form-data"
+      >
         <div>
           <section className="section">
             <label className="test">Berichtnaam</label>
@@ -47,12 +49,6 @@ export default function Sidebar() {
               placeholder="Geen Title"
             />
             <br />
-
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-            ></form>
 
             <label className="test">Bericht</label>
             <br />
@@ -74,22 +70,23 @@ export default function Sidebar() {
                 Header afbeelding
               </label>
               <br />
-              <FontAwesomeIcon icon="fa-solid fa-camera" />
+
               <label className="picture" for="file">
+                <CameraAltIcon />
                 <div>
                   <p>Kies bestand</p>
                 </div>
               </label>
               <input
                 type="file"
-                name="file"
+                name="files"
                 className="form-control-file"
                 id="file"
               />
             </div>
             <br />
             <button type="submit" className="sidebarsubmit">
-              bericht aanmaken
+              Bericht aanmaken
             </button>
           </section>
         </div>

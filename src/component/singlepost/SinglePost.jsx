@@ -11,7 +11,6 @@ export default function SinglePost(props) {
           src="./images/Socialbrothers banner1.jpg"
           alt=""
         />
-
         {/* postinfo */}
         <div className="postInfo">
           <div className="postCats ">

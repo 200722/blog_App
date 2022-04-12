@@ -21,27 +21,6 @@ export default function TopBar() {
               POSTS
             </Link>
           </li>
-
-          {/* <li className="toplistItem">
-            <Link className="link" to="/contact">
-              Contact
-            </Link>
-          </li> */}
-          {/* <li className="toplistItem">
-            <Link className="link" to="/write">
-              Write
-            </Link>
-          </li> */}
-          {/* <li className="toplistItem">
-            <Link className="link" to="/logout">
-              Logout
-            </Link>
-          </li> */}
-          {/* <li className="toplistItem">
-            <Link className="link" to="/About">
-              About
-            </Link>
-          </li> */}
         </ul>
       </div>
     </div>

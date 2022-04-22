@@ -19,6 +19,7 @@ export default function Posts() {
     <div className="posts">
       {data.data &&
         data.data.map((post) => {
+          console.log(post.img_url);
           return (
             <SinglePost
               title={post.title}

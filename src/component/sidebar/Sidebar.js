@@ -7,6 +7,7 @@ import Select from "react-select";
 
 export default function Sidebar() {
   const [categories, setCategories] = useState([]);
+  const [formKey, setFormKey] = useState(4);
 
   useEffect(() => {
     async function fetchCategories() {
@@ -17,6 +18,7 @@ export default function Sidebar() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setFormKey(formKey + 1);
     var files = document.getElementById("file").files[0];
     // console.log(files);
     var formdata = new FormData();
@@ -34,6 +36,7 @@ export default function Sidebar() {
       </div>
 
       <form
+        key={formKey}
         onSubmit={handleSubmit}
         className="sidebarTitle"
         enctype="multipart/form-data"

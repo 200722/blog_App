@@ -1,10 +1,8 @@
 import "./sidebar.css";
 import CameraAltIcon from "@mui/icons-material/ThreeDRotation";
 import { useState, useEffect } from "react";
-
 import { createPost, getCategories } from "../../frontend-case-api";
 import Select from "react-select";
-
 export default function Sidebar() {
   const [categories, setCategories] = useState([]);
   const [formKey, setFormKey] = useState(4);
@@ -20,7 +18,7 @@ export default function Sidebar() {
     event.preventDefault();
     setFormKey(formKey + 1);
     var files = document.getElementById("file").files[0];
-    // console.log(files);
+    console.log(files);
     var formdata = new FormData();
     formdata.append("title", event.target.title.value);
     formdata.append("content", event.target.description.value);

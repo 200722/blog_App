@@ -2,7 +2,7 @@ import "./posts.css";
 import SinglePost from "../singlepost/SinglePost";
 import { useState, useEffect } from "react";
 import { fetchPosts } from "../../frontend-case-api";
-// import ReactPaginate from "react-paginate";
+import ReactPaginate from "react-paginate";
 export default function Posts() {
   const [data, setData] = useState(0);
   const [page, setPage] = useState(4);
@@ -11,15 +11,15 @@ export default function Posts() {
     fetchPosts(page, setData);
   }, [page]);
 
-  const increment = () => {
+  //   const increment = () => {
+  //     setPage(page + 4);
+  //     fetchPosts(page, setData);
+  //   };
+  const handlePageClick = async (data) => {
+    console.log(data.selected);
     setPage(page + 4);
     fetchPosts(page, setData);
   };
-  // const handlePageClick = async (data) => {
-  //   console.log(data.selected);
-  //   setPage(page + 4);
-  //   fetchPosts(page, setData);
-  // };
 
   return (
     <div className="posts">
@@ -35,15 +35,13 @@ export default function Posts() {
             />
           );
         })}
-      <button onClick={() => increment()} className="meer-laden">
-        Meer laden
-      </button>
 
-      {/* <ReactPaginate
+      <ReactPaginate
+        className="pagination"
         previousLabel={"previous"}
         nextLabel={"next"}
         breakLabel={"..."}
-        pageCount={7}
+        pageCount={6}
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
         onPageChange={handlePageClick}
@@ -57,7 +55,7 @@ export default function Posts() {
         breakClassName={"page-item"}
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
-      /> */}
+      />
     </div>
   );
 }

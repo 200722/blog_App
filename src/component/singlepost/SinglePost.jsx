@@ -7,7 +7,7 @@ export default function SinglePost(props) {
       <div className="post">
         <img
           className="postImg"
-          // src={props.img_url}
+          // src={props.image}
           src="./images/Socialbrothers banner1.jpg"
           alt=""
         />

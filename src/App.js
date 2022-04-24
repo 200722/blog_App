@@ -1,5 +1,6 @@
 import Home from "./pages/home/Home";
 import Posts from "./pages/posts/posts";
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {

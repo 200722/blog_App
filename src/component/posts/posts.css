@@ -23,3 +23,12 @@
   margin-top: 67px;
   margin-left: 69px;
 }
+.pagination {
+  display: flex;
+  align-items: flex-end;
+  list-style-type: none;
+
+  margin-top: 4px;
+  margin-top: 67px;
+  margin-right: 69px;
+}
